@@ -1,20 +1,28 @@
-import { useState, useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import fetchByCountry from '../APIs/fetchByCountry'
+import PropTypes from 'prop-types'
 
 import ArticleContainer from '../Article/ArticleContainer'
 
-const MainContainer = () => {
-	const [requestParams, setRequestParams] = useState({
+const MainContainer = ({ articles, country }) => {
+	/* 	const [requestParams, setRequestParams] = useState({
 		country: 'us',
 	})
 
 	const results = useQuery(['search', requestParams], fetchByCountry)
-	/* const articles = results?.data ?? [] */
+	const articles = results?.data.articles ?? []
+	console.log('Main-res', results) */
 
-	console.log('MAIN', results)
-
-	return <main>{/* 	<ArticleContainer articles={articles} /> */}</main>
+	return (
+		<>
+			<h1 className="ms-3.5">&#8226;Top News stories from {country}</h1>
+			<ArticleContainer articles={articles} />
+		</>
+	)
 }
+
+MainContainer.propTypes = {
+	articles: PropTypes.object,
+  country: PropTypes.string,
+}
+
 
 export default MainContainer
