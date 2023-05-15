@@ -6,40 +6,50 @@ import fetchByCountry from '../APIs/fetchByCountry'
 import MainContainer from '../Main/MainContainer'
 
 const TopNews = () => {
-/* 	let statedCountry = country ? country : 'us' */
+	/* 	let statedCountry = country ? country : 'us' */
 
 	/* 	const [requestParams, setRequestParams] = useState({
 		country: statedCountry,
 	}) */
+	/* 	const { country } = useParams() */
+
+	/* 	let country = Intl.DateTimeFormat()
+		.resolvedOptions()
+		.timeZone.startsWith('America/')
+		? 'us'
+		: 'gb' */
 	const { country } = useParams()
-	const results = useQuery(
-		['country', country],
-		fetchByCountry
-	)
-	const articles = results?.data.articles ?? []
+
+	const results = useQuery({
+		queryKey: ['country', country],
+		queryFn: fetchByCountry,
+	})
 
 	/* const [requestParams, setRequestParams] = useState({
 		country: 'us',
-	}) 
+	}) */
 
-	const results = useQuery(['search', requestParams], fetchByCountry)
-	const articles = results?.data.articles ?? []
-	console.log('Main-res', results)
-	*/
+	/* 	const results = useQuery(['search', requestParams], fetchByCountry) */
+	console.log('willie', results)
+	const articles = results?.data?.articles ?? []
+
+	console.log('Main-res', results.data)
 
 	if (results.isLoading) {
 		return (
 			<div>
-				<h2>🌀</h2>
+				<img
+					src="https://frinkiac.com/gif/S07E02/1004586/1006588.gif"
+					alt="spinning newspaper"
+				/>
 			</div>
 		)
 	}
-
 	console.log('Top', results)
 	return (
 		<>
 			<MainContainer
-				country={requestParams.country}
+				country={country}
 				articles={articles}
 			/>
 		</>

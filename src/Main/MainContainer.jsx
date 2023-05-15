@@ -20,9 +20,8 @@ const MainContainer = ({ articles, country }) => {
 }
 
 MainContainer.propTypes = {
-	articles: PropTypes.object,
-  country: PropTypes.string,
+	articles: PropTypes.array,
+	country: PropTypes.string,
 }
-
 
 export default MainContainer

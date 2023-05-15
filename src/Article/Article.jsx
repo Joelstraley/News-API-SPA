@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const Article = ({ title, img, desc }) => {
+const Article = ({ id, title, img, desc }) => {
 	return (
-		<div className="">
+		<div className="flex flex-col border-solid border-2 rounded-md m-5">
 			<h1>{title}</h1>
-			<img src={img} />
+			<img
+				src={img}
+				className="mx-auto"
+			/>
 			<p>{desc}</p>
-			<Link to={`/details/`}>
+			<Link to={`/details/${id}`}>
 				<p>More</p>
 			</Link>
 			{/* link */}
@@ -16,6 +19,7 @@ const Article = ({ title, img, desc }) => {
 }
 
 Article.propTypes = {
+	id: PropTypes.number,
 	title: PropTypes.string,
 	img: PropTypes.string,
 	desc: PropTypes.string,
