@@ -64,6 +64,10 @@ li:hover {
   opacity: 50%;
 }
 
+.nav--active-location {
+  background: red;
+}
+
 /* 
 a {
   font-weight: 500;

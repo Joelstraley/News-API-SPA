@@ -1,9 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
 
-const navItemsStyleLeft = `mx-4`
-
-const navItemsStyleRight = ``
-
 const Nav = () => {
 	let { country } = useParams()
 
@@ -14,6 +10,10 @@ const Nav = () => {
 			? 'us'
 			: 'gb'
 	}
+
+	let navItemsStyleLeft = `mx-4`
+	let navItemsStyleGB = country === 'gb' ? `nav--active-location` : ''
+	let navItemsStyleUS = country === 'us' ? `nav--active-location` : ''
 
 	return (
 		<header>
@@ -37,10 +37,10 @@ const Nav = () => {
 					</li>
 				</ul>
 				<ul className="flex px-4">
-					<li className={navItemsStyleRight}>
+					<li className={navItemsStyleGB}>
 						<Link to="/topnews/gb">GB</Link>
 					</li>
-					<li className={navItemsStyleRight}>
+					<li className={navItemsStyleUS}>
 						<Link to="/topnews/us">US</Link>
 					</li>
 				</ul>
