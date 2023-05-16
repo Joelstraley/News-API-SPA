@@ -6,7 +6,6 @@ import DefaultImage from '../assets/default-images/default-news.jpg'
 const Article = ({ id, title, img, desc }) => {
 	const image = img ? img : `${DefaultImage}`
 	const headline = title.substring(0, title.indexOf('-'))
-	/* const description = desc ? desc.substring(0, 265) : '' */
 
 	return (
 		<div className="flex flex-col border-solid border-2 rounded-md m-5 backgroundBlur">

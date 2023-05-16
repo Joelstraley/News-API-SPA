@@ -1,5 +1,5 @@
-import Article from './Article'
 import PropTypes from 'prop-types'
+import Article from './Article'
 
 const ArticleContainer = ({ articles }) => {
 	return (

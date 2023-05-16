@@ -26,7 +26,7 @@ const TopNews = () => {
 
 	if (results.isLoading) {
 		return (
-			<div className="m-15">
+			<div className="mx-auto">
 				<img
 					src="https://frinkiac.com/gif/S07E02/1004586/1006588.gif"
 					alt="spinning newspaper"
