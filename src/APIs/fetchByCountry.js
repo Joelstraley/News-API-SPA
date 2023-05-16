@@ -9,13 +9,10 @@ const fetchByCountry = async ({ queryKey }) => {
 			`apiKey=${apiKey}`
 	)
 
-	/* const res = await fetch('https://dummyjson.com/products/1') */
-
-	console.log('country-res', res)
-
-	/* 	if (!res.ok) {
+	if (!res.ok) {
 		throw new Error(`Sorry, we could not find the top stories in ${country}`)
-	} */
+	}
+
 	return res.json()
 }
 

@@ -2,7 +2,6 @@ import Article from './Article'
 import PropTypes from 'prop-types'
 
 const ArticleContainer = ({ articles }) => {
-	console.log('ArticlCon', articles)
 	return (
 		<main className="grid md:grid-cols-3 gap-2">
 			{!articles.length ? (
@@ -23,7 +22,6 @@ const ArticleContainer = ({ articles }) => {
 }
 
 ArticleContainer.propTypes = {
-	/* articles: PropTypes.array, */
 	articles: PropTypes.array,
 }
 

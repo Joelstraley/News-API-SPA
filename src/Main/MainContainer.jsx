@@ -5,7 +5,7 @@ import ArticleContainer from '../Article/ArticleContainer'
 const MainContainer = ({ articles, country }) => {
 	return (
 		<>
-			<h1 className="ms-3.5">
+			<h1 className="ms-3.5 news-title">
 				&#8226;Top News stories from{' '}
 				{country === 'us' ? 'the United States' : 'Great Britain'}
 			</h1>

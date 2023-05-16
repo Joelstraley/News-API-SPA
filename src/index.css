@@ -12,14 +12,42 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #d7f7fc;
+  background-color: #005eff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.backgroundBlur {
+  background: rgb(0 43 51 / 87%);
+  padding: 1em;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+img {
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.news-title {
+    color: #001333;
+}
+
+li {
+  padding: 10px;
+}
+
+li:hover {
+  background: #005eff;
+  color: #ccdfff;
 }
 /* 
 a {

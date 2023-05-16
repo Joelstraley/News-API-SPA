@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import DefaultImage from '../assets/default-images/default-news.jpg'
+
 const Article = ({ id, title, img, desc }) => {
+	const image = img ? img : `${DefaultImage}`
+
 	return (
-		<div className="flex flex-col border-solid border-2 rounded-md m-5">
+		<div className="flex flex-col border-solid border-2 rounded-md m-5 backgroundBlur">
 			<h1>{title}</h1>
 			<img
-				src={img}
+				src={image}
 				className="mx-auto"
 			/>
 			<p>{desc}</p>

@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types'
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+
 import fetchByCountry from '../APIs/fetchByCountry'
+
 import MainContainer from '../Main/MainContainer'
 
 const TopNews = () => {
@@ -22,8 +24,6 @@ const TopNews = () => {
 
 	const articles = results?.data?.articles ?? []
 
-	console.log('Main-res', results.data)
-
 	if (results.isLoading) {
 		return (
 			<div className="m-15">
@@ -34,7 +34,7 @@ const TopNews = () => {
 			</div>
 		)
 	}
-	console.log('Top', results)
+
 	return (
 		<>
 			<MainContainer
