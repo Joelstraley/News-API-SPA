@@ -5,22 +5,31 @@ const navItemsStyleLeft = `mx-4`
 const navItemsStyleRight = ``
 
 const Nav = () => {
-	/* 	const [requestParams, setRequestParams] = useState({
-		country: 'us',
-	}) */
-	const { country } = useParams()
+	let { country } = useParams()
 
-	console.log('NAV- country', country)
+	if (!country) {
+		country = Intl.DateTimeFormat()
+			.resolvedOptions()
+			.timeZone.startsWith('America/')
+			? 'us'
+			: 'gb'
+	}
 
 	return (
 		<header>
 			<nav className="flex justify-between my-6 bg-white text-zinc-950">
 				<ul className="flex">
 					<li className={navItemsStyleLeft}>
-						<Link to="/topnews/us">Top News</Link>
+						<Link to={`/topnews/${country}`}>Top News</Link>
 					</li>
 					<li className={navItemsStyleLeft}>
-						<Link to="/categories">Categories</Link>
+						<Link
+							to="/categories"
+							state={{
+								country: `${country}`,
+							}}>
+							Categories
+						</Link>
 					</li>
 					<li className={navItemsStyleLeft}>
 						<Link to="/search">Search</Link>

@@ -10,10 +10,18 @@ const Article = ({ id, title, img, desc }) => {
 				className="mx-auto"
 			/>
 			<p>{desc}</p>
-			<Link to={`/details/${id}`}>
-				<p>More</p>
+			<Link
+				to={{
+					pathname: `/news/${id}`,
+				}}
+				state={{
+					id: `${id}`,
+					title: `${title}`,
+					img: `${img}`,
+					desc: `${desc}`,
+				}}>
+				<span>More</span>
 			</Link>
-			{/* link */}
 		</div>
 	)
 }

@@ -1,7 +1,6 @@
 const apiKey = import.meta.env.VITE_MY_API_KEY
 
 const fetchByCountry = async ({ queryKey }) => {
-	console.log('HIIT')
 	const country = queryKey[1]
 
 	const res = await fetch(

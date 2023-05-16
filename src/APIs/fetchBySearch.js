@@ -1,7 +1,7 @@
 const apiKey = import.meta.env.VITE_MY_API_KEY
 
 async function fetchBySearch({ queryKey }) {
-	console.log(queryKey)
+	console.log('Search', queryKey)
 	const searchTerm = queryKey[1]
 
 	const res = await fetch(

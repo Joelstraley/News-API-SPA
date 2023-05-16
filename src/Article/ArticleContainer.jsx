@@ -5,30 +5,6 @@ const ArticleContainer = ({ articles }) => {
 	console.log('ArticlCon', articles)
 	return (
 		<main className="grid md:grid-cols-3 gap-2">
-			{/* <Article
-				title={articles.title}
-				img={articles.images[0]}
-				desc={articles.description}
-				key={articles.id}
-			/>
-			<Article
-				title={articles.title}
-				img={articles.images[0]}
-				desc={articles.description}
-				key={articles.id}
-			/>
-			<Article
-				title={articles.title}
-				img={articles.images[0]}
-				desc={articles.description}
-				key={articles.id}
-			/>
-			<Article
-				title={articles.title}
-				img={articles.images[0]}
-				desc={articles.description}
-				key={articles.id}
-			/> */}
 			{!articles.length ? (
 				<h1>No Articles Found</h1>
 			) : (

@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 import ArticleContainer from '../Article/ArticleContainer'
 import fetchBySearch from '../APIs/fetchBySearch'
 
 const Search = () => {
-	/* const [requestParams, setRequestParams] = useState({
-		searchTerm: '',
-	}) */
-
-	const [searchTerm, setSearchTerm] = useState('')
+	const [searchTerm, setSearchTerm] = useState('everything')
 
 	const results = useQuery(['searchTerm', searchTerm], fetchBySearch)
-	const articles = results?.data.articles ?? []
+	const articles = results?.data?.articles ?? []
 
 	return (
 		<div className="search-container">
-			<label htmlFor="searchTerm">
-				Search
+			<label
+				htmlFor="searchTerm"
+				className="mr-2">
 				<input
+					className="text-slate-950 rounded-lg p-1 mr-2"
 					name="search"
 					id="search"
 					placeholder="search..."
@@ -29,6 +29,7 @@ const Search = () => {
 						e.preventDefault(), setSearchTerm(e.target.value)
 					}}
 				/>
+				<FontAwesomeIcon icon={faMagnifyingGlass} />
 			</label>
 			<ArticleContainer articles={articles} />
 		</div>
