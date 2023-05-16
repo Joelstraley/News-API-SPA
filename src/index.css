@@ -37,6 +37,11 @@ img {
   margin: 2px;
 }
 
+.title {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2em;
+}
+
 .news-title {
     color: #001333;
 }
@@ -49,6 +54,16 @@ li:hover {
   background: #005eff;
   color: #ccdfff;
 }
+
+.article--link {
+  margin-top: 2em;
+  text-decoration: underline;
+}
+
+.article--link:hover {
+  opacity: 50%;
+}
+
 /* 
 a {
   font-weight: 500;

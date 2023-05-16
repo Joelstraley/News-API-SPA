@@ -17,6 +17,7 @@ const Nav = () => {
 
 	return (
 		<header>
+			<h1 className="title mt-2">The Official News API SPA</h1>
 			<nav className="flex justify-between my-6 bg-white text-zinc-950">
 				<ul className="flex">
 					<li className={navItemsStyleLeft}>
