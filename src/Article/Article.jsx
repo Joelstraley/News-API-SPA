@@ -9,7 +9,7 @@ const Article = ({ id, title, img, desc }) => {
 
 	return (
 		<div className="flex flex-col border-solid border-2 rounded-md m-5 backgroundBlur">
-			<h1>{headline}</h1>
+			<h1 className="headline">{headline}</h1>
 			<img
 				src={image}
 				alt={headline}
